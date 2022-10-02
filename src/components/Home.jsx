@@ -2,11 +2,12 @@
 
 import React, { Component } from "react";
 import { Button, Container, Row, Col, Form } from "react-bootstrap";
+import Movie from "./Movie";
 
 export default class Home extends Component {
   state = {
-    movieTitle: "Man of Steel",
-    showMovieSelection: true,
+    movieTitle: "ManOfSteel",
+    showMovieSelection: false,
   };
 
   changeMovie = (e) => {
@@ -29,9 +30,9 @@ export default class Home extends Component {
                 value={this.state.movieTitle}
                 onChange={this.changeMovie}
               >
-                <option value={"Batman Begins"}>Batman Begins</option>
-                <option value={"Wonder Woman"}>Wonder Woman</option>
-                <option value={"Man of Steel"}>Man of Steel</option>
+                <option value={"BatmanBegins"}>Batman Begins</option>
+                <option value={"WonderWoman"}>Wonder Woman</option>
+                <option value={"ManOfSteel"}>Man of Steel</option>
               </Form.Control>
             </Form.Group>
           </Col>
@@ -39,9 +40,9 @@ export default class Home extends Component {
         <Row>
           <Col md={{ span: 6, offset: 3 }} className="text-center">
             <div>
-              {/* {this.state.showMovieSelection && (
+              {this.state.showMovieSelection && (
                 <Movie selectedMovie={this.state.movieTitle} />
-              )} */}
+              )}
               <Button
                 variant="success"
                 onClick={() =>
