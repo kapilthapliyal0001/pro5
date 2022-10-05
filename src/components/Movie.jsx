@@ -11,7 +11,7 @@ export default class Movie extends Component {
   };
 
   componentDidMount = async () => {
-    console.log("Component did mount done for the project!");
+    // console.log("Component did mount done for the project!");
     this.fetchMovie();
     // this.timer = setInterval(() => console.log("Counting"), 1000);
   };
@@ -24,31 +24,31 @@ export default class Movie extends Component {
       //   configure from the backend that we will send the response to be the object having all the info about the movie
       if (res.ok) {
         let data = await res.json();
-        console.log(data);
+        // console.log(data);
         this.setState({
           movie: data,
         });
-        console.log("The data is fetched");
+        // console.log("The data is fetched");
       }
-      console.log("Good line 31");
+      // console.log("Good line 31");
     } catch (error) {
       console.log("There is some error : ", error);
     }
   };
   componentDidUpdate(prevProps, prevState) {
-    console.log("Good line 37");
-    console.log("Movie got updated");
-    console.log(prevProps.selectedMovie);
-    console.log(this.props.selectedMovie);
+    // console.log("Good line 37");
+    // console.log("Movie got updated");
+    // console.log(prevProps.selectedMovie);
+    // console.log(this.props.selectedMovie);
 
     if (prevProps.selectedMovie !== this.props.selectedMovie) {
       this.fetchMovie();
-      console.log("Good line 44");
+      // console.log("Good line 44");
     }
   }
   componentWillUnmount() {
-    console.log("Good line 49");
-    console.log("The component will unmount");
+    // console.log("Good line 49");
+    // console.log("The component will unmount");
     // clearImmediate(this.timer);
   }
   render() {
